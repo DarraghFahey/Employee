@@ -19,6 +19,13 @@ public class EmployeeListTest {
         assertEquals(1, employeeList.employeeArrayListSize());
     }
 
+    @Test
+    public void testAddInvalidEmployee() {
+        Exception e = assertThrows(IllegalArgumentException.class, ()->{new Employee("Master", "Joe Bloggs", "123456", "0123456", "Full-Time", 35);});
+        assertEquals("Not a valid Title", e.getMessage());
+        assertEquals(0, employeeList.employeeArrayListSize());
+    }
+
     @Test void testRemoveEmployee() {
         Employee employee = new Employee();
         employeeList.addEmployee(employee);
