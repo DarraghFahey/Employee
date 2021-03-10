@@ -1,3 +1,7 @@
+/* Darragh Fahey
+ * G00352047@gmit.ie
+ * 10 MAR 2021
+ */
 package ie.gmit;
 
 import org.junit.jupiter.api.Test;
@@ -9,7 +13,7 @@ public class EmployeeListTest {
     EmployeeList employeeList = new EmployeeList();
 
     @Test
-    public void testAddEmplyoee() {
+    public void testAddEmployee() {
         Employee employee = new Employee();
         employeeList.addEmployee(employee);
         assertEquals(1, employeeList.employeeArrayListSize());
@@ -24,7 +28,7 @@ public class EmployeeListTest {
     }
 
     @Test
-    void testFindStudentNotFound() {
+    void testFindEmployeeNotFound() {
         Employee employee = new Employee();
         employeeList.addEmployee(employee);
         Exception e = assertThrows(IllegalArgumentException.class, ()->{new EmployeeList().deleteEmployee("Jerry Blogs");});
